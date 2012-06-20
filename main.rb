@@ -3,12 +3,11 @@ require "bundler/setup"
 require "yaml"
 
 require_relative "github_notifier"
+require_relative "jenkins_notifier"
 
 def config
   @config ||= YAML.load_file("config/settings.yml")
 end
 
-notifier = GithubNotifier.new(config)
-notifier.get_items.each do |item|
-  notifier.notify item
-end
+GithubNotifier.new(config).notify_all
+JenkinsNotifier.new(config).notify_all
