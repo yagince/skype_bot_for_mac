@@ -1,0 +1,6 @@
+# for Mac
+.DS_Store
+
+config/settings.yml
+
+notified_list.txt
