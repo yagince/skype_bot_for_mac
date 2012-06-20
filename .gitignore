@@ -1,9 +1,11 @@
 Gemfile.lock
 .rvmrc
+.bundle
 
 # for Mac
 .DS_Store
 
 config/settings.yml
 
-notified_list.txt
+github.notified_list.txt
+jenkins.notified_list.txt

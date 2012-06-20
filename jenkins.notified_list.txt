@@ -1,3 +1,0 @@
-tag:hudson.dev.java.net,2008:http://jenkins.aoi-socialapp.com/job/aventador-develop/
-tag:hudson.dev.java.net,2008:http://jenkins.aoi-socialapp.com/job/mechaotome-develop/
-tag:hudson.dev.java.net,2008:http://jenkins.aoi-socialapp.com/job/military2-develop/
