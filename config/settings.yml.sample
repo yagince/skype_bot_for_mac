@@ -5,6 +5,7 @@ github_atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.ato
 jenkins_rss_host: "jenkins.xxx.com"
 jenkins:
   rss_category: "/rssAll"
+  basic_auth: true
   user: 'someone'
   pass: 'password'
 
