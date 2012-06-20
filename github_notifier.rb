@@ -1,6 +1,11 @@
+require "open-uri"
 require_relative "base_notifier"
 
 class GithubNotifier < BaseNotifier
+
+  def rss_body
+    open(@atom_url)
+  end
 
   def message(item)
 <<-EOM

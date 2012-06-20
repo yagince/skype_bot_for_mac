@@ -1,2 +1,12 @@
-atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
-chat_id: "#fugafuga/$xxxxxxx"
+# github
+github_atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
+
+#jenkins
+jenkins_rss_host: "jenkins.xxx.com"
+jenkins:
+  rss_category: "/rssAll"
+  user: 'someone'
+  pass: 'password'
+
+#skype
+chat_id: "#xxxxxxxxx/$xxx;xxxxx"

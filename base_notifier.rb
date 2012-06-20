@@ -9,6 +9,7 @@ class BaseNotifier
   include ActionView::Helpers::SanitizeHelper
 
   def initialize(config)
+    @config = config
     @atom_url = config[url_key]
     @chat_id = config['chat_id']
     @client = SkypeClient.new(config)
@@ -25,7 +26,7 @@ class BaseNotifier
   end
 
   def get_items
-    SimpleRSS.parse(open(@atom_url)).items.select {|item| p item; !@notified_items[item.id]}
+    SimpleRSS.parse(rss_body).items.select {|item| !@notified_items[item.id]}
   end
 
   def notify(item)
