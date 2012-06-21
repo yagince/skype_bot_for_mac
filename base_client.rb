@@ -1,7 +1,8 @@
 class BaseClient
-  def initialize(config=YAML.load_file("config/settings.yml"))
+  def initialize(config)
     @config = config
   end
-  def send_massage(message)
+  def send_massage(message, title="")
+    # nop
   end
 end

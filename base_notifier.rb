@@ -3,7 +3,7 @@ require "awesome_print"
 require "simple-rss"
 require "open-uri"
 require "yaml"
-require_relative "skype_client"
+require_relative "multi_client"
 
 class BaseNotifier
   include ActionView::Helpers::SanitizeHelper
@@ -11,8 +11,7 @@ class BaseNotifier
   def initialize(config)
     @config = config
     @url = url
-    @chat_id = config.chat_id
-    @client = SkypeClient.new(config)
+    @client = MultiClient.new(config)
 
     Dir.chdir(File.dirname(__FILE__))
     %x(touch #{notified_list_name}) unless File.exist?(notified_list_name)
@@ -31,7 +30,7 @@ class BaseNotifier
 
   def notify(item)
     message = message(item)
-    @client.send_message(message)
+    @client.send_message(message, title)
     puts "send message following:\n#{message}"
     log_item(item)
   end

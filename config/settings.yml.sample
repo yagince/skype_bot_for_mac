@@ -13,4 +13,10 @@ jenkins:
   pass: 'password'
 
 #skype
-chat_id: "#xxxxxxxxx/$xxx;xxxxx"
+skype:
+  enable: false
+  chat_id: "#xxxxxxxxx/$xxx;xxxxx"
+
+#growlnotify mac only
+growlnotify:
+  enable: false

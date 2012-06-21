@@ -7,6 +7,10 @@ class GithubNotifier < BaseNotifier
     open(@url)
   end
 
+  def title
+    "Github"
+  end
+
   def message(item)
 <<-EOM
 ==Github Activity Notify==

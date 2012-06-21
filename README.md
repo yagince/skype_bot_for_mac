@@ -13,26 +13,43 @@ config/settings.yml
 
 ```yaml
 # github
-github_atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
+github:
+  enable: true
+  atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
 
 #jenkins
-jenkins_rss_host: "jenkins.xxx.com"
 jenkins:
+  enable: true
+  rss_host: "jenkins.xxx.com"
   rss_category: "/rssAll"
-  user: 'someone' # basic認証のユーザー
-  pass: 'password' # basic認証のパスワード
+  basic_auth: true
+  user: 'someone'
+  pass: 'password'
 
 #skype
-chat_id: "#xxxxxxxxx/$xxx;xxxxx"
+skype:
+  enable: false
+  chat_id: "#xxxxxxxxx/$xxx;xxxxx"
+
+#growlnotify mac only
+growlnotify:
+  enable: false
 ```
 
-* github_atom_url : githubのcommitsやpublic activityのRSSのURL
-* jenkins_rss_host : jenkinsのホスト名
+* github
+    * enable : githubのチェックON/OFF true->ON false->OFF
+    * url : githubのcommitsやpublic activityのRSSのURL
 * jenkins
+    * enable : jenkinsのチェックON/OFF true->ON false->OFF
+    * rss_host : jenkinsのホスト名
     * rss_category : /rssAllとか/rssFailedとか  
     * user : jenkinsのユーザー  
     * password : jenkinsのパスワード
-* chat_id  
-SkypeClient#chat_ids  
-SkypeClient#room_name  
-でchat_idを調べて下さい  
+* skype
+    * enable : skype通知のOnOFF
+    * chat_id  
+    SkypeClient#chat_ids  
+    SkypeClient#room_name  
+    でchat_idを調べて下さい  
+* growlnotify
+    * enable : growlへの通知OnOFF

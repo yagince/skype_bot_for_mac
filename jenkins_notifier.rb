@@ -12,6 +12,10 @@ class JenkinsNotifier < BaseNotifier
     }
   end
 
+  def title
+    "jenkins"
+  end
+
   def message(item)
 <<-EOM
 ==Jenkins ビルド結果==

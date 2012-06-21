@@ -4,8 +4,8 @@ require_relative "base_client"
 include SkypeMac
 
 class SkypeClient < BaseClient
-  def send_message(message)
-    send_command "CHATMESSAGE #{@config.chat_id} #{message}"
+  def send_message(message, title="")
+    send_command "CHATMESSAGE #{@config.skype.chat_id} #{message}" if @config.skype.enable
   end
 
   def chat_ids
