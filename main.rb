@@ -10,5 +10,5 @@ def config
   @config ||= Settings.new
 end
 
-GithubNotifier.new(config).notify_all
-JenkinsNotifier.new(config).notify_all
+GithubNotifier.new(config).notify_all if config.github.enable
+JenkinsNotifier.new(config).notify_all if config.jenkins.enable

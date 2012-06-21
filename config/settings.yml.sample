@@ -1,8 +1,11 @@
 # github
-github_atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
+github:
+  enable: true
+  atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
 
 #jenkins
 jenkins:
+  enable: true
   rss_host: "jenkins.xxx.com"
   rss_category: "/rssAll"
   basic_auth: true
