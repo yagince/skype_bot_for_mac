@@ -5,7 +5,7 @@ include SkypeMac
 
 class SkypeClient < BaseClient
   def send_message(message)
-    send_command "CHATMESSAGE #{@config['chat_id']} #{message}"
+    send_command "CHATMESSAGE #{@config.chat_id} #{message}"
   end
 
   def chat_ids

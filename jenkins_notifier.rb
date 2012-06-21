@@ -5,9 +5,9 @@ require_relative "base_notifier"
 class JenkinsNotifier < BaseNotifier
 
   def rss_body
-    Net::HTTP.start(@atom_url){|http|
-      req=Net::HTTP::Get.new(jenkins_config['rss_category'])
-      req.basic_auth(jenkins_config['user'],jenkins_config['pass']) if jenkins_config['basic_auth']
+    Net::HTTP.start(@url){|http|
+      req=Net::HTTP::Get.new(jenkins_config.rss_category)
+      req.basic_auth(jenkins_config.user,jenkins_config.pass) if jenkins_config.basic_auth
       http.request(req).body
     }
   end
@@ -25,13 +25,13 @@ EOM
     "jenkins.notified_list.txt"
   end
 
-  def url_key
-    'jenkins_rss_host'
+  def url
+    @config.jenkins.rss_host
   end
 
   private
   def jenkins_config
-    @config['jenkins']
+    @config.jenkins
   end
 
 end

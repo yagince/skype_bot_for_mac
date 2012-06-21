@@ -4,7 +4,7 @@ require_relative "base_notifier"
 class GithubNotifier < BaseNotifier
 
   def rss_body
-    open(@atom_url)
+    open(@url)
   end
 
   def message(item)
@@ -22,8 +22,8 @@ EOM
     "github.notified_list.txt"
   end
 
-  def url_key
-    'github_atom_url'
+  def url
+    @config.github.atom_url
   end
 
 end

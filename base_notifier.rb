@@ -10,8 +10,8 @@ class BaseNotifier
 
   def initialize(config)
     @config = config
-    @atom_url = config[url_key]
-    @chat_id = config['chat_id']
+    @url = url
+    @chat_id = config.chat_id
     @client = SkypeClient.new(config)
 
     Dir.chdir(File.dirname(__FILE__))

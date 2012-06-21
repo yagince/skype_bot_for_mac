@@ -4,9 +4,10 @@ require "yaml"
 
 require_relative "github_notifier"
 require_relative "jenkins_notifier"
+require_relative "settings"
 
 def config
-  @config ||= YAML.load_file("config/settings.yml")
+  @config ||= Settings.new
 end
 
 GithubNotifier.new(config).notify_all

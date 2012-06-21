@@ -2,8 +2,8 @@
 github_atom_url: "https://github.com/organizations/hogehoge/hogehoge.private.atom?token=xxxxxxx"
 
 #jenkins
-jenkins_rss_host: "jenkins.xxx.com"
 jenkins:
+  rss_host: "jenkins.xxx.com"
   rss_category: "/rssAll"
   basic_auth: true
   user: 'someone'
