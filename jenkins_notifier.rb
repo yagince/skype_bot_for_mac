@@ -21,6 +21,7 @@ class JenkinsNotifier < BaseNotifier
 ==Jenkins ビルド結果==
 #{item.published}
 #{item.title}
+#{item.link}
 ==========================
 EOM
   end
